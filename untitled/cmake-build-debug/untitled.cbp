@@ -74,6 +74,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/guswn/CLionProjects/untitled/home/ubuntu/unixProject/guswns/Mcdonald.c">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="C:/Users/guswn/CLionProjects/untitled/home/ubuntu/unixProject/guswns/time.c">
 			<Option target="untitled"/>
 		</Unit>

@@ -122,6 +122,33 @@ untitled/fast:
 	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
+home/ubuntu/unixProject/guswns/Mcdonald.obj: home/ubuntu/unixProject/guswns/Mcdonald.c.obj
+
+.PHONY : home/ubuntu/unixProject/guswns/Mcdonald.obj
+
+# target to build an object file
+home/ubuntu/unixProject/guswns/Mcdonald.c.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.obj
+.PHONY : home/ubuntu/unixProject/guswns/Mcdonald.c.obj
+
+home/ubuntu/unixProject/guswns/Mcdonald.i: home/ubuntu/unixProject/guswns/Mcdonald.c.i
+
+.PHONY : home/ubuntu/unixProject/guswns/Mcdonald.i
+
+# target to preprocess a source file
+home/ubuntu/unixProject/guswns/Mcdonald.c.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.i
+.PHONY : home/ubuntu/unixProject/guswns/Mcdonald.c.i
+
+home/ubuntu/unixProject/guswns/Mcdonald.s: home/ubuntu/unixProject/guswns/Mcdonald.c.s
+
+.PHONY : home/ubuntu/unixProject/guswns/Mcdonald.s
+
+# target to generate assembly for a file
+home/ubuntu/unixProject/guswns/Mcdonald.c.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.s
+.PHONY : home/ubuntu/unixProject/guswns/Mcdonald.c.s
+
 home/ubuntu/unixProject/guswns/time.obj: home/ubuntu/unixProject/guswns/time.c.obj
 
 .PHONY : home/ubuntu/unixProject/guswns/time.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... edit_cache
 	@echo ... untitled
 	@echo ... rebuild_cache
+	@echo ... home/ubuntu/unixProject/guswns/Mcdonald.obj
+	@echo ... home/ubuntu/unixProject/guswns/Mcdonald.i
+	@echo ... home/ubuntu/unixProject/guswns/Mcdonald.s
 	@echo ... home/ubuntu/unixProject/guswns/time.obj
 	@echo ... home/ubuntu/unixProject/guswns/time.i
 	@echo ... home/ubuntu/unixProject/guswns/time.s

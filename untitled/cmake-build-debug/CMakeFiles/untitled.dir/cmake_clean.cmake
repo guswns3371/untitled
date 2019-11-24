@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.obj"
   "CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.obj"
   "CMakeFiles/untitled.dir/main.c.obj"
   "libuntitled.dll.a"
