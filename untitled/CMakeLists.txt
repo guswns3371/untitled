@@ -3,4 +3,4 @@ project(untitled C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(untitled main.c home/ubuntu/unixProject/guswns/time.c home/ubuntu/unixProject/guswns/Mcdonald.c)
+add_executable(untitled main.c guswns/time.c guswns/Mc/Mcdonald.c guswns/intro.c)

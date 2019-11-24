@@ -1,0 +1,372 @@
+#include <stdio.h>
+#include <string.h>
+//#include <process.h>
+#include <stdlib.h>
+struct product
+{
+    char name[10];
+    char price[10];
+}pros[100];
+int count = 0;
+int ID;
+int back = 3;
+int convert(char num[]);
+
+void displayAdmin();
+void displayCustomer();
+void displayMainMenu();
+void displayBurgerMenu();
+void displayInput();
+int  displayAll();
+
+void Add();
+void Search();
+void Revise();
+void Delete();
+
+
+void shoppingcar();
+void searchbyname();
+
+
+int main()
+{
+    int n;
+    char password[20];
+    char *correctpassword = "123";
+    backtoMainMenu:displayMainMenu();                         //메인 메뉴 표시
+
+    if (ID == 0)
+    {
+        printf("Admin 계정으로 들어가려면 비밀번호를 입력하십시오:\n");
+        scanf("%s", password);
+        //비밀번호 입력
+        while (strcmp(password, correctpassword) != 0)
+        {
+            printf("비밀번호 입력이 잘못되었습니다. 다시 입력하십시오:\n");
+            scanf("%s", password);
+        }
+        //올바른 비밀번호 결정
+
+        backtoAdminMenu:displayAdmin();
+        scanf("%d", &n);
+        switch (n){
+            case 1:displayAll();
+                break;
+            case 2:Add();
+                break;
+            case 3:Revise();
+                break;
+            case 4:Delete();
+                break;
+            case 5:Search();
+                break;
+            case 6:exit(0);
+            default:break;
+        }
+    }
+        //공급 업체 사이드 메뉴 표시
+    else
+    {
+        backtoCustomerMenu: displayCustomer();
+        scanf("%d", &n);
+        switch (n){
+            case 1:displayAll();
+                break;
+            case 2://Buy();
+                break;
+            case 3://Service();
+                break;
+            case 4:Search();
+                break;
+            case 5://sort();
+                break;
+            case 6:shoppingcar();
+                break;
+            case 7://account();
+                break;
+            case 8:exit(0);
+                break;
+            default:break;
+        }
+    }
+    //소비자 메뉴 표시
+    printf("\n\n\n");
+    printf("메인 메뉴로 돌아가기 0\n Admin 메뉴로 돌아가기 1\n 손님 메뉴로 돌아가기\n :");
+    scanf("%d", &back);
+    if (back == 0)
+        goto backtoMainMenu;
+    else if (back == 1)
+        goto backtoAdminMenu;
+    else if (back == 2)
+        goto backtoCustomerMenu;
+
+    return 0;
+}
+
+void displayMainMenu() {
+    system("clear");
+    printf("\n\n\n\n\n");
+    printf("\t ----------------------------------\n");
+    printf("\t|      Welcome to McDonald (메인 메뉴)   |\n");
+    printf("\t|---------------------------------|\n");
+
+    printf("   Admin 메뉴 0\n 손님 메뉴 1 :");
+    scanf("%d", &ID);
+}
+
+void displayCustomer()
+{
+    system("clear");
+    printf("\n\n\n\n\n");
+    printf("\t ----------------------------------\n");
+    printf("\t|      Welcome to McDonald (손님 메뉴)   |\n");
+    printf("\t|---------------------------------|\n");
+    printf("\t|\t1-ShowAll            |\n");
+    printf("\t|\t2-직접 상품 구매                |\n");
+    printf("\t|\t3-Service                |\n");
+    printf("\t|\t4-Search              |\n");
+    printf("\t|\t5-순서대로 제품 정보보기         |\n");
+    printf("\t|\t6-장바구니에 상품 추가           |\n");
+    printf("\t|\t7-장바구니에 상품을 정산하십시오  |\n");
+    printf("\t|\t8-exit                          |\n");
+    printf("\t ----------------------------------\n");
+    printf("\n      ENTER YOUR CHOICE(1-6):");
+}
+//소비자 메뉴 표시
+
+void displayAdmin()
+{
+    system("clear");
+    printf("\n\n\n\n\n");
+    printf("\t ----------------------------------\n");
+    printf("\t|      Welcome to McDonald (Admin 메뉴)   |\n");
+    printf("\t|---------------------------------|\n");
+    printf("\t|\t1-ShowAll        |\n");
+    printf("\t|\t2-Add                |\n");
+    printf("\t|\t3-Revise           |\n");
+    printf("\t|\t4-Delete				 |\n");
+    printf("\t|\t5-Search           |\n");
+    printf("\t|\t6-exit                    |\n");
+    printf("\t ----------------------------------\n");
+    printf("\n      ENTER YOUR CHOICE(1-6):");
+}
+//공급 업체 메뉴 표시
+
+int displayAll()       //모든 제품 정보 표시
+{
+    system("clear");
+    FILE *fp;
+    int i;
+
+    if ((fp = fopen("information.txt", "rb")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+    //파일을 열 수 있는지 확인
+    printf("\n\n\n\n\n");
+    printf("\t --------------------------------\n");
+    printf("\t|   Welcome to McDonald          |\n");
+    printf("\t|   제품명     상품 가격         |\n");
+    printf("\t|--------------------------------|\n");
+    for (i = 0; (fread(&pros[i], sizeof(struct product), 1, fp)) != 0; i++)
+    {
+        printf("\t|%10s%10s   |\n", pros[i].name,pros[i].price);
+    }
+    //제품 정보를 살펴보고 파일에서 인쇄
+    printf("\t -------------------------------------------\n\n\n");
+
+    printf("           총 %d 개의 항목이 있습니다\n", i);
+    if (fclose(fp))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+
+    return i;
+    //파일을 닫을 수 있는지 확인
+}
+
+void Revise()        //제품 정보 편집
+{
+    system("clear");
+    FILE* fp;
+    FILE* dfp;
+    int i = 0;
+    int j;
+    char name[10];
+    struct product newpro;
+
+    if ((fp = fopen("information.txt", "rb+")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+    if ((dfp = fopen("delete.txt", "ab")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+
+    displayAll();
+    printf("편집하려는 제품의 이름을 입력하십시오:\n");
+    scanf("%s", name);
+    while (fread(&pros[i], sizeof(struct product), 1, fp))  //제품 정보를 순환
+    {
+        if (strcmp(name, pros[i].name) != 0)   //수정 될 제품 정보인지 확인
+        {
+            fwrite(&pros[i], sizeof(struct product), 1, dfp);
+            i++;
+            //새 파일로 수정할 필요가없는 제품 정보 작성
+        }
+        else
+        {
+            rewind(fp);  //파일 포인터를 처음으로 재설정
+            fseek(fp, sizeof(struct product)*(i + 1), 1);
+            //항목을 삭제 한 후 파일 포인터를 놓습니다.
+            //fseek(fp,0,1);
+        }
+    }
+
+    if (fclose(fp))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+    if (fclose(dfp))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+    //파일을 닫을 수 있는지 확인
+    remove("information.txt");
+    //원본 파일 삭제
+    rename("delete.txt", "information.txt");
+    //새로 만든 파일의 이름을 원래 파일 이름으로 바꿉니다.
+    printf("새로운 제품 정보를 입력하십시오\n(이름, 가격): ");
+    scanf("%s%s", newpro.name, newpro.price);
+    if ((fp = fopen("information.txt", "ab")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+    if (fwrite(&newpro, sizeof(struct product), 1, fp) != 1)
+        printf("제품 정보 수정 실패\n");
+    else
+        printf("제품 정보가 성공적으로 수정완료\n\n");
+
+    if (fclose(fp))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+}
+
+void Delete()            //제품 정보 삭제
+{
+    system("clear");
+    FILE* fp;
+    FILE* dfp;
+    int i = 0;
+    char name[10];
+    int confirm;
+
+    if ((fp = fopen("information.txt", "rb+")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+    if ((dfp = fopen("delete.txt", "ab")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+    //파일을 열 수 있는지 확인
+    displayAll();       //제품 목록 표시
+    printf("삭제하려는 제품의 이름을 입력하십시오.:");
+    scanf("%s", name);
+    printf("선택한 제품을 삭제하시겠습니까？\n");
+    printf("돌아가기 0\n 삭제하기 1 :\n");
+    scanf("%d", &confirm);
+    if (confirm == 1)
+    {
+        while (fread(&pros[i], sizeof(struct product), 1, fp))  //제품 정보를 순환
+        {
+            if (strcmp(name, pros[i].name) != 0)   //삭제할 제품 정보인지 판별하십시오.
+            {
+                fwrite(&pros[i], sizeof(struct product), 1, dfp);
+                i++;
+                //새 파일로 삭제할 필요가없는 제품 정보를 작성하십시오
+            }
+            else
+            {
+                rewind(fp);  //파일 포인터를 처음으로 재설정
+                fseek(fp, sizeof(struct product)*(i + 1), 0);
+                //항목을 삭제 한 후 파일 포인터를 놓습니다.
+                // fseek(fp,sizeof(struct product),1);
+                // fseek(fp,0,1);
+            }
+        }
+        if (fclose(fp))
+        {
+            printf("can not close the file\n");
+            exit(0);
+        }
+        if (fclose(dfp))
+        {
+            printf("can not close the file\n");
+            exit(0);
+        }
+        //파일을 닫을 수 있는지 확인
+        remove("information.txt");
+        //원본 파일 삭제
+        rename("delete.txt", "information.txt");
+        //새로 만든 파일의 이름을 원래 파일 이름으로 바꿉니다.
+        printf("제품이 성공적으로 삭제되었습니다\n");
+    }
+    else
+        printf("\n\n제품 삭제를 취소하였습니다\n");
+}
+
+void Search()              //제품 정보 쿼리
+{
+    system("clear");
+    searchbyname();
+}
+
+void searchbyname()
+{
+    int judge = 0;
+    system("clear");
+    FILE* fp;
+    int i = 0;
+    char name[10];
+    if ((fp = fopen("information.txt", "rb")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+    //파일을 열 수 있는지 확인
+    printf("찾으려는 제품의 이름을 입력하세요：");
+    scanf("%s", name);
+    for (i = 0; fread(&pros[i], sizeof(struct product), 1, fp) != 0; i++)
+    {
+        //파일에서 제품 정보를 읽는 루프
+        if (strcmp(name, pros[i].name) == 0)
+        {
+            judge = 1;
+            printf("찾으려는 제품 정보는 다음과 같습니다.：\n");
+            printf("%10s%10s\n", pros[i].name,pros[i].price);
+        }
+    }
+    if (judge == 0)
+    {
+        printf("찾으려는 제품 정보를 찾을 수 없습니다\n");
+    }
+    if (fclose(fp))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+}
