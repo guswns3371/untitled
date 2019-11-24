@@ -4,7 +4,7 @@
 #include <stdlib.h>
 struct product
 {
-    char idx[2];
+    char idx[20];
     char kind[20];
     char name[20];
     char price[20];
@@ -14,6 +14,7 @@ int count = 0;
 int ID;
 int back = 3;
 int convert(char num[]);
+int GetNextIdx();
 
 void displayAdmin();
 void displayCustomer();
@@ -176,7 +177,7 @@ int displayAll()       //모든 제품 정보 표시
     printf("\t|------------------------------------------------|\n");
     for (i = 0; (fread(&pros[i], sizeof(struct product), 1, fp)) != 0; i++)
     {
-        printf("\t|%5s%5s%20s%20s   |\n", pros[i].idx,pros[i].kind, pros[i].name, pros[i].price);
+        printf("\t|%5s %8s%20s%20s   |\n", pros[i].idx,pros[i].kind, pros[i].name, pros[i].price);
     }
     //제품 정보를 살펴보고 파일에서 인쇄
     printf("\t -------------------------------------------\n\n\n");
@@ -192,15 +193,49 @@ int displayAll()       //모든 제품 정보 표시
     //파일을 닫을 수 있는지 확인
 }
 
+int GetNextIdx()
+{
+    FILE *fpr;
+    int j,i=0;
+    if ((fpr = fopen("information.txt", "rb")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+    for (j = 0; (fread(&pros[i], sizeof(struct product), 1, fpr)) != 0; j++);
+
+    if (fclose(fpr))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+    return j;
+}
 void Add()      //제품 정보 추가
 {
-    FILE *fp;
-    int i = 0,j=0;
+    FILE *fp ,*fpr;
+    int i = 0,j;
     int loop = 1;     //루프가 설정되어 있는지 확인
     system("clear");
 
     do
     {
+
+//        if ((fpr = fopen("information.txt", "rb")) == NULL)
+//        {
+//            printf("can not open the file\n");
+//            exit(0);
+//        }
+//        for (j = 0; (fread(&pros[i], sizeof(struct product), 1, fpr)) != 0; j++);
+//
+//        sprintf(pros[i].idx,"%d" ,j);//번호 지정
+//        if (fclose(fpr))
+//        {
+//            printf("can not close the file\n");
+//            exit(0);
+//        }
+
+        sprintf(pros[i].idx,"%d" ,GetNextIdx());//번호 지정
         printf("추가하려는 제품의 종류 : ");
         scanf("%s",pros[i].kind);
         printf("추가하려는 제품의 이름 : ");
@@ -208,6 +243,7 @@ void Add()      //제품 정보 추가
         printf("추가하려는 제품의 가격 : ");
         scanf("%s",pros[i].price);
         //키보드에서 제품 정보 읽기
+
         if ((fp = fopen("information.txt", "ab")) == NULL)
         {
             printf("can not open the file\n");
@@ -215,9 +251,7 @@ void Add()      //제품 정보 추가
         }
         //파일을 열 수 있는지 확인
 
-        while (fread(&pros[i], sizeof(struct product), 1, fp))
-            j++;
-        strcpy(pros[i].idx, (const char *) (j+1)); //번호 지정
+
         if (fwrite(&pros[i], sizeof(struct product), 1, fp) != 1)
             printf("file write error\n");
         //배열의 항목 정보를 파일에 씁니다.，그리고 쓰기 성공 여부를 결정
@@ -236,6 +270,7 @@ void Add()      //제품 정보 추가
 
 }
 
+/*이부분 다시 고치자 수정하면 idx 망가짐*/
 void Revise()        //제품 정보 편집
 {
     system("clear");
@@ -243,7 +278,7 @@ void Revise()        //제품 정보 편집
     FILE* dfp;
     int i = 0;
     int j;
-    char name[10];
+    char idx[20];
     struct product newpro;
 
     if ((fp = fopen("information.txt", "rb+")) == NULL)
@@ -258,11 +293,11 @@ void Revise()        //제품 정보 편집
     }
 
     displayAll();
-    printf("편집하려는 제품의 이름을 입력하십시오:\n");
-    scanf("%s", name);
+    printf("편집하려는 제품의 번호을 입력하십시오:\n");
+    scanf("%s", idx);
     while (fread(&pros[i], sizeof(struct product), 1, fp))  //제품 정보를 순환
     {
-        if (strcmp(name, pros[i].name) != 0)   //수정 될 제품 정보인지 확인
+        if (strcmp(idx, pros[i].idx) != 0)   //수정 될 제품 정보인지 확인
         {
             fwrite(&pros[i], sizeof(struct product), 1, dfp);
             i++;
@@ -292,8 +327,15 @@ void Revise()        //제품 정보 편집
     //원본 파일 삭제
     rename("delete.txt", "information.txt");
     //새로 만든 파일의 이름을 원래 파일 이름으로 바꿉니다.
-    printf("새로운 제품 정보를 입력하십시오\n(이름, 가격): ");
-    scanf("%s%s", newpro.name, newpro.price);
+    printf("새로운 제품 정보를 입력하십시오\n");
+    printf("새로운 제품의 종류 : ");
+    scanf("%s",newpro.kind);
+    printf("새로운 제품의 이름 : ");
+    scanf("%s",newpro.name);
+    printf("새로운 제품의 가격 : ");
+    scanf("%s",newpro.price);
+    sprintf(newpro.idx,"%d",GetNextIdx()); // 새제품의 idx
+
     if ((fp = fopen("information.txt", "ab")) == NULL)
     {
         printf("can not open the file\n");
@@ -317,7 +359,7 @@ void Delete()            //제품 정보 삭제
     FILE* fp;
     FILE* dfp;
     int i = 0;
-    char name[10];
+    char idx[10];
     int confirm;
 
     if ((fp = fopen("information.txt", "rb+")) == NULL)
@@ -332,8 +374,8 @@ void Delete()            //제품 정보 삭제
     }
     //파일을 열 수 있는지 확인
     displayAll();       //제품 목록 표시
-    printf("삭제하려는 제품의 이름을 입력하십시오.:");
-    scanf("%s", name);
+    printf("삭제하려는 제품의 번호를 입력하십시오.:");
+    scanf("%s", idx);
     printf("선택한 제품을 삭제하시겠습니까？\n");
     printf("돌아가기 0\n삭제하기 1 :\n");
     scanf("%d", &confirm);
@@ -341,7 +383,7 @@ void Delete()            //제품 정보 삭제
     {
         while (fread(&pros[i], sizeof(struct product), 1, fp))  //제품 정보를 순환
         {
-            if (strcmp(name, pros[i].name) != 0)   //삭제할 제품 정보인지 판별하십시오.
+            if (strcmp(idx, pros[i].idx) != 0)   //삭제할 제품 정보인지 판별하십시오.
             {
                 fwrite(&pros[i], sizeof(struct product), 1, dfp);
                 i++;
