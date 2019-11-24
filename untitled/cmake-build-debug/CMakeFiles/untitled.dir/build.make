@@ -69,64 +69,79 @@ CMakeFiles/untitled.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/main.c.s"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guswn\CLionProjects\untitled\main.c -o CMakeFiles\untitled.dir\main.c.s
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.obj: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.obj: ../home/ubuntu/unixProject/guswns/time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\time.c.obj   -c C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\time.c
+CMakeFiles/untitled.dir/unixProject/guswns/time.c.obj: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/unixProject/guswns/time.c.obj: ../unixProject/guswns/time.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/untitled.dir/unixProject/guswns/time.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled.dir\unixProject\guswns\time.c.obj   -c C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\time.c
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\time.c > CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\time.c.i
+CMakeFiles/untitled.dir/unixProject/guswns/time.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/unixProject/guswns/time.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\time.c > CMakeFiles\untitled.dir\unixProject\guswns\time.c.i
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\time.c -o CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\time.c.s
+CMakeFiles/untitled.dir/unixProject/guswns/time.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/unixProject/guswns/time.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\time.c -o CMakeFiles\untitled.dir\unixProject\guswns\time.c.s
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.obj: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.obj: ../home/ubuntu/unixProject/guswns/Mcdonald.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\Mcdonald.c.obj   -c C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\Mcdonald.c
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.obj: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.obj: ../unixProject/guswns/Mc/Mcdonald.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled.dir\unixProject\guswns\Mc\Mcdonald.c.obj   -c C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\Mcdonald.c
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\Mcdonald.c > CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\Mcdonald.c.i
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\Mcdonald.c > CMakeFiles\untitled.dir\unixProject\guswns\Mc\Mcdonald.c.i
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\Mcdonald.c -o CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\Mcdonald.c.s
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\Mcdonald.c -o CMakeFiles\untitled.dir\unixProject\guswns\Mc\Mcdonald.c.s
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.obj: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.obj: ../home/ubuntu/unixProject/guswns/intro.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\intro.c.obj   -c C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\intro.c
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.obj: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.obj: ../unixProject/guswns/Mc/intro.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled.dir\unixProject\guswns\Mc\intro.c.obj   -c C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\intro.c
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\intro.c > CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\intro.c.i
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\intro.c > CMakeFiles\untitled.dir\unixProject\guswns\Mc\intro.c.i
 
-CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guswn\CLionProjects\untitled\home\ubuntu\unixProject\guswns\intro.c -o CMakeFiles\untitled.dir\home\ubuntu\unixProject\guswns\intro.c.s
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\intro.c -o CMakeFiles\untitled.dir\unixProject\guswns\Mc\intro.c.s
+
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.obj: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.obj: ../unixProject/guswns/Mc/initfile.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\untitled.dir\unixProject\guswns\Mc\initfile.c.obj   -c C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\initfile.c
+
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\initfile.c > CMakeFiles\untitled.dir\unixProject\guswns\Mc\initfile.c.i
+
+CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\guswn\CLionProjects\untitled\unixProject\guswns\Mc\initfile.c -o CMakeFiles\untitled.dir\unixProject\guswns\Mc\initfile.c.s
 
 # Object files for target untitled
 untitled_OBJECTS = \
 "CMakeFiles/untitled.dir/main.c.obj" \
-"CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.obj" \
-"CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.obj" \
-"CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.obj"
+"CMakeFiles/untitled.dir/unixProject/guswns/time.c.obj" \
+"CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.obj" \
+"CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.obj" \
+"CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.obj"
 
 # External object files for target untitled
 untitled_EXTERNAL_OBJECTS =
 
 untitled.exe: CMakeFiles/untitled.dir/main.c.obj
-untitled.exe: CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.obj
-untitled.exe: CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.obj
-untitled.exe: CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.obj
+untitled.exe: CMakeFiles/untitled.dir/unixProject/guswns/time.c.obj
+untitled.exe: CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.obj
+untitled.exe: CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.obj
+untitled.exe: CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.obj
 untitled.exe: CMakeFiles/untitled.dir/build.make
 untitled.exe: CMakeFiles/untitled.dir/linklibs.rsp
 untitled.exe: CMakeFiles/untitled.dir/objects1.rsp
 untitled.exe: CMakeFiles/untitled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable untitled.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\guswn\CLionProjects\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable untitled.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\untitled.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

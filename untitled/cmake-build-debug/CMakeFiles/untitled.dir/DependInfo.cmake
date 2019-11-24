@@ -4,10 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/guswn/CLionProjects/untitled/home/ubuntu/unixProject/guswns/Mcdonald.c" "C:/Users/guswn/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/Mcdonald.c.obj"
-  "C:/Users/guswn/CLionProjects/untitled/home/ubuntu/unixProject/guswns/intro.c" "C:/Users/guswn/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/intro.c.obj"
-  "C:/Users/guswn/CLionProjects/untitled/home/ubuntu/unixProject/guswns/time.c" "C:/Users/guswn/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/home/ubuntu/unixProject/guswns/time.c.obj"
   "C:/Users/guswn/CLionProjects/untitled/main.c" "C:/Users/guswn/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/main.c.obj"
+  "C:/Users/guswn/CLionProjects/untitled/unixProject/guswns/Mc/Mcdonald.c" "C:/Users/guswn/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/unixProject/guswns/Mc/Mcdonald.c.obj"
+  "C:/Users/guswn/CLionProjects/untitled/unixProject/guswns/Mc/initfile.c" "C:/Users/guswn/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/unixProject/guswns/Mc/initfile.c.obj"
+  "C:/Users/guswn/CLionProjects/untitled/unixProject/guswns/Mc/intro.c" "C:/Users/guswn/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.obj"
+  "C:/Users/guswn/CLionProjects/untitled/unixProject/guswns/time.c" "C:/Users/guswn/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir/unixProject/guswns/time.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

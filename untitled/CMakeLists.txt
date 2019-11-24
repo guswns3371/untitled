@@ -3,4 +3,4 @@ project(untitled C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(untitled main.c guswns/time.c guswns/Mc/Mcdonald.c guswns/intro.c)
+add_executable(untitled main.c  unixProject/guswns/time.c unixProject/guswns/Mc/Mcdonald.c unixProject/guswns/Mc/intro.c unixProject/guswns/Mc/initfile.c)
