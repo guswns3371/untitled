@@ -40,7 +40,11 @@ struct product
 /*********************/
 int kind;
 int convert(char num[]);
+<<<<<<< Updated upstream
 int GetCount(char *filename);
+=======
+int GetNextIdx(char *filename);
+>>>>>>> Stashed changes
 
 void displayAdmin();
 void displayCustomer();

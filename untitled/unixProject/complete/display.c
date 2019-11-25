@@ -1,8 +1,7 @@
 #include "main.h"
 void mainmenu()
 {
-
-    //하현준123
+// ghdtjq홍섭123123jgkjkghjkghj
     system("clear");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------------\n");

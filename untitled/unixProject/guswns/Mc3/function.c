@@ -451,15 +451,26 @@ void sortbyprice()
         exit(0);
     }
     //파일을 열 수 있는지 확인
+<<<<<<< Updated upstream
     for (i = 0; fread(&pros[i], sizeof(struct product), 1, fp) != 1; i++)
+=======
+    for (i = 0; fread(&pros[i], sizeof(struct product), 1, fp) == 1; i++)
+>>>>>>> Stashed changes
     {
 
     }
     printf("\n\n\n\n\n");
+<<<<<<< Updated upstream
     printf("\t -------------------------------------------\n");
     printf("\t|          Welcome to this machine          |\n");
     printf("\t|  번호   제품종류       제품이름       제품가격  |\n");
     printf("\t|-------------------------------------------|\n");
+=======
+    printf("\t -------------------------------------------------\n");
+    printf("\t|          Welcome to this machine                |\n");
+    printf("\t|  번호   제품종류       제품이름       제품가격  |\n");
+    printf("\t|-------------------------------------------------|\n");
+>>>>>>> Stashed changes
     for (j = 0; j <= i; j++)
     {
         for (k = j + 1; k <= i; k++)
@@ -474,7 +485,11 @@ void sortbyprice()
     }
     for (j = 0; j <= i; j++)
     {
+<<<<<<< Updated upstream
         printf("\t|%10d,%20s,%20s,%20s  |\n", index++, pros[j].kind, pros[j].name, pros[j].price);
+=======
+        printf("\t|%10s,%20s,%20s,%20s  |\n", pros[j].idx, pros[j].kind, pros[j].name, pros[j].price);
+>>>>>>> Stashed changes
     }
     printf("\t -------------------------------------------\n");
     if (fclose(fp))
@@ -592,7 +607,11 @@ void account() // 장바구니 결제
     FILE *sfp, *fp;
     int i, j, sum = 0, price, money, change,number=1;
     system("clear");
+<<<<<<< Updated upstream
     if ((sfp = fopen("shoppingcar.txt", "rb")) == NULL)
+=======
+    if ((sfp = fopen("shoppingcart.txt", "rb")) == NULL)
+>>>>>>> Stashed changes
     {
         printf("can not open the file\n");
         exit(0);
@@ -636,7 +655,11 @@ void account() // 장바구니 결제
     for (j = 0; j<i; j++)
     {
         fwrite(&pros[j], sizeof(struct product), 1, fp);
+<<<<<<< Updated upstream
         //shoppingcar 파일에서 soldlist 파일로 데이터 쓰기
+=======
+        //shoppingcart 파일에서 soldlist 파일로 데이터 쓰기
+>>>>>>> Stashed changes
     }
 
     if (fclose(sfp))
@@ -649,12 +672,20 @@ void account() // 장바구니 결제
         printf("can not close the file\n");
         exit(0);
     }
+<<<<<<< Updated upstream
     remove("shoppingcar.txt");
+=======
+    remove("shoppingcart.txt");
+>>>>>>> Stashed changes
 }
 
 
 /******************************************/
+<<<<<<< Updated upstream
 int GetCount(char *filename)
+=======
+int GetNextIdx(char *filename)
+>>>>>>> Stashed changes
 {
     FILE *fpr;
     int j,i=0;
@@ -682,7 +713,11 @@ void Add2()      //제품 정보 추가
     do
     {
 
+<<<<<<< Updated upstream
         sprintf(pros[i].idx,"%d" ,GetCount(INFO_FILE));//번호 지정
+=======
+        sprintf(pros[i].idx,"%d" ,GetNextIdx(INFO_FILE));//번호 지정
+>>>>>>> Stashed changes
         printf("추가하려는 제품의 종류 \n버거 0\n사이드 1\n음료 2: ");
         scanf("%d",&kind);
         strcpy(pros[i].kind,kinds[kind]);
@@ -784,14 +819,23 @@ void Revise2()
     }
 
     printf("새로운 제품 정보를 입력하십시오\n");
+<<<<<<< Updated upstream
     printf("새로운 제품의 종류 \n버거 0\n사이드 1\n음료 2: ");
     scanf("%d",&kind);
     strcpy(newpro.kind,kinds[kind]);
+=======
+    printf("새로운 제품의 종류 : ");
+    scanf("%s",newpro.kind);
+>>>>>>> Stashed changes
     printf("새로운 제품의 이름 : ");
     scanf("%s",newpro.name);
     printf("새로운 제품의 가격 : ");
     scanf("%s",newpro.price);
+<<<<<<< Updated upstream
     sprintf(newpro.idx,"%d",GetCount("delete.txt")); // 새제품의 idx
+=======
+    sprintf(newpro.idx,"%d",GetNextIdx("delete.txt")); // 새제품의 idx
+>>>>>>> Stashed changes
 
 
     if ((dfp = fopen("delete.txt", "rb")) == NULL)
