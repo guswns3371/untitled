@@ -1,0 +1,39 @@
+﻿  Function.c
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(9): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(48): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(77): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(82): warning C4129: 'd' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(117): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(119): warning C4129: 'd' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(119): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(123): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(150): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(155): warning C4129: 'd' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(196): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(198): warning C4129: 'd' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(198): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(238): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(273): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(317): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(380): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(430): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(474): warning C4101: 'i' : unreferenced local variable
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(474): warning C4101: 'money' : unreferenced local variable
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(492): warning C4129: 's' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(526): warning C4129: 's' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(531): warning C4129: 'i' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(577): warning C4129: 's' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(582): warning C4129: 's' : unrecognized character escape sequence
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(634): warning C4129: 's' : unrecognized character escape sequence
+  menu.c
+  main.c
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\main.c(9): warning C4013: 'mainmenu' undefined; assuming extern returning int
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\main.c(57): warning C4013: 'account' undefined; assuming extern returning int
+  Generating Code...
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(122): warning C4700: uninitialized local variable 'newpro' used
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(329): warning C4700: uninitialized local variable 'newfp' used
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(506): warning C4700: uninitialized local variable 'number' used
+c:\users\hong\documents\visual studio 2013\projects\macdonald\macdonald\function.c(635): warning C4715: 'account' : not all control paths return a value
+menu.obj : error LNK2005: _back already defined in main.obj
+Function.obj : error LNK2005: _back already defined in main.obj
+C:\Users\hong\Documents\Visual Studio 2013\Projects\MACDONALD\Debug\MACDONALD.exe : fatal error LNK1169: one or more multiply defined symbols found

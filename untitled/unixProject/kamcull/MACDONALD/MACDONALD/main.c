@@ -35,7 +35,7 @@ backtomain:
 			break;
 		case 5:Search();
 			break;
-		case 6:turnover();
+		case 6:soldproducts();
 			break;
 		case 7:exit(0);
 		default:break;
@@ -52,7 +52,7 @@ backtomain:
 			break;
 		case 2:sort();
 			break;
-		case 3:shoppingcar();
+		case 3:shoppingcart();
 			break;
 		case 4:account();
 			break;

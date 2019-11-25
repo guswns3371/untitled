@@ -29,7 +29,7 @@ void showmenu0()
 	printf("\t|\t3-제품 정보 편집하기            |\n");//Revise();
 	printf("\t|\t4-제품 삭제하기		          |\n");//Delete();
 	printf("\t|\t5-제품 검색하기              |\n");//Search();
-	printf("\t|\t6-판매 된 목록 및 매출보기    |\n");//turnover();
+	printf("\t|\t6-판매 된 목록 및 매출보기    |\n");//soldproducts();
 	printf("\t|\t7-종료                     |\n");//exit(0);
 	printf("\t ----------------------------------\n");
 	printf("\n      ENTER YOUR CHOICE(1-7):");
@@ -45,7 +45,7 @@ void showmenu1()
 	printf("\t|---------------------------------|\n");
 	printf("\t|\t1-상품 구매                     |\n");//Buy();
 	printf("\t|\t2-가격순으로 제품 보기           |\n");//sort();
-	printf("\t|\t3-장바구니에 상품 추가           |\n");//shoppingcar();
+	printf("\t|\t3-장바구니에 상품 추가           |\n");//shoppingcart();
 	printf("\t|\t4-계산하기                      |\n");//account();
 	printf("\t|\t5-종료                          |\n");//exit(0);
 	printf("\t ----------------------------------\n");
