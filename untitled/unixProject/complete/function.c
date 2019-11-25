@@ -1,4 +1,4 @@
-#include "main.h"
+d#include "main.h"
 char kinds[3][10] ={"버거","사이드","음료"};
 int ShowAll()//모든 제품 표시
 {
@@ -310,6 +310,7 @@ void Buy()  //상품 구매
     int prices; // 제품 가격
     int judge = 0;
     int i;
+    char answer;
 
     ShowAll();
     printf("구매하려는 제품의 번호를 입력하십시오 :");
@@ -319,7 +320,7 @@ void Buy()  //상품 구매
         printf("can not open the file\n");
         exit(0);
     }
-    if ((newfp = fopen("shoppingcart.txt", "ab")) == NULL)
+    if ((newfp = fopen("receipt.txt", "ab")) == NULL)
     {
         printf("can not open the file");
         exit(0);
@@ -336,25 +337,39 @@ void Buy()  //상품 구매
                 printf("file write error\n");
             }
             judge = 1;
-            printf("제품(%s) 가격은 %s입니다. 지폐를 넣으십시오.\n", pros[i].name,pros[i].price);
-            printf("지불할 금액:"); //지불 금액을 입력하세요.
-            scanf("%d", &money);
-            prices = atoi(pros[i].price); //문자열에서 정수로 가격 변환
-            change = money - prices;//변화량 계산
-
-            if (change >= 0)
-                printf("구매해 주셔서 감사합니다, 거스름돈은 %d원입니다.\n", change);
-            else
+            printf("제품(%s) 가격은 %s입니다. 구입하시겠습니까(y/n)?.\n", pros[i].name,pros[i].price);
+            scanf("%c",&answer);
+            switch(answer)
             {
-                printf("%d원이 부족합니다.\n 돈을 넣어주십시오", -change);
-                printf("지불할 금액:");
-                printf("%d", money);
-                change = money + change;
-                printf("구입해 주셔서 감사합니다. 거스름돈은 %d원입니다.\n");
-            }
+                case y:
+                    printf("지불할 금액:"); //지불 금액을 입력하세요.
+                    scanf("%d", &money);
+                    prices = atoi(pros[i].price); //문자열에서 정수로 가격 변환
+                    change = money - prices;//변화량 계산
 
-            //지불 금액이 충분한지 확인
-        }
+                    if (change >= 0)
+                    {
+                        printf("구매해 주셔서 감사합니다, 거스름돈은 %d 원입니다.\n", change);
+                        receipt();
+                    }
+
+                    else if(change<0)
+                    {   while(change<0)
+                        {
+                        printf("%d원이 부족합니다.\n 돈을 넣어주십시오", -change);
+                        printf("지불할 금액:");
+                        printf("%d", money);
+                        change = money + change;
+                        }
+                        printf("구입해 주셔서 감사합니다. 거스름돈은 %d원입니다.\n",change);
+                        receipt();
+
+                    }
+                    exit(0);
+                case n:
+                    exit(0);
+            }
+         }
     }
     if (judge == 0)
         printf("구매하려는 제품이 없습니다.\n");
@@ -377,7 +392,7 @@ void sort()
     system("clear");
     int way;
     printf("\n\n정렬 방식을 선택하십시오:\n");
-    printf("종류별1,가격별2");
+    printf("종류별(1),가격별(2)");
     scanf("%d", &way);
     switch (way)
     {
@@ -451,7 +466,7 @@ void sortbyprice()
         exit(0);
     }
     //파일을 열 수 있는지 확인
-    for (i = 0; fread(&pros[i], sizeof(struct product), 1, fp) != 1; i++)
+    for (i = 0; fread(&pros[i], sizeof(struct product), 1, fp) == 1; i++)
     {
 
     }
