@@ -592,7 +592,7 @@ void account() // 장바구니 결제
     FILE *sfp, *fp;
     int i, j, sum = 0, price, money, change,number=1;
     system("clear");
-    if ((sfp = fopen("shoppingcar.txt", "rb")) == NULL)
+    if ((sfp = fopen("shoppingcart.txt", "rb")) == NULL)
     {
         printf("can not open the file\n");
         exit(0);
@@ -672,6 +672,24 @@ int GetCount(char *filename)
     }
     return j;
 }
+int GetLastIndex(char *filename)
+{
+    FILE *fpr;
+    int j,i=0;
+    if ((fpr = fopen(filename, "rb")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
+    for (j = 0; (fread(&pros[i], sizeof(struct product), 1, fpr)) != 0; j++);
+
+    if (fclose(fpr))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+    return atoi(pros[i].idx);
+}
 void Add2()      //제품 정보 추가
 {
     FILE *fp;
@@ -682,7 +700,7 @@ void Add2()      //제품 정보 추가
     do
     {
 
-        sprintf(pros[i].idx,"%d" ,GetCount(INFO_FILE));//번호 지정
+        sprintf(pros[i].idx,"%d" ,GetLastIndex(INFO_FILE)+1);//번호 지정
         printf("추가하려는 제품의 종류 \n버거 0\n사이드 1\n음료 2: ");
         scanf("%d",&kind);
         strcpy(pros[i].kind,kinds[kind]);

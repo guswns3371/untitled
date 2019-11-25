@@ -37,10 +37,11 @@ struct product
 }pros[100];
 
 
-/*********************/
+
 int kind;
 int convert(char num[]);
 int GetCount(char *filename);
+int GetLastIndex(char *filename);
 
 void displayAdmin();
 void displayCustomer();
