@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/guswn/CLionProjects/untitled/home/ubuntu/unixProject/guswns/time.c
+stdio.h
+-
+time.h
+-
+
+C:/Users/guswn/CLionProjects/untitled/main.c
+signal.h
+-
+sys/types.h
+-
+unistd.h
+-
+stdio.h
+-
+
