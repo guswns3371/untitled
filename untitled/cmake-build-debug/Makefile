@@ -230,6 +230,87 @@ unixProject/guswns/Mc/intro.c.s:
 	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc/intro.c.s
 .PHONY : unixProject/guswns/Mc/intro.c.s
 
+unixProject/guswns/Mc3/display.obj: unixProject/guswns/Mc3/display.c.obj
+
+.PHONY : unixProject/guswns/Mc3/display.obj
+
+# target to build an object file
+unixProject/guswns/Mc3/display.c.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/display.c.obj
+.PHONY : unixProject/guswns/Mc3/display.c.obj
+
+unixProject/guswns/Mc3/display.i: unixProject/guswns/Mc3/display.c.i
+
+.PHONY : unixProject/guswns/Mc3/display.i
+
+# target to preprocess a source file
+unixProject/guswns/Mc3/display.c.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/display.c.i
+.PHONY : unixProject/guswns/Mc3/display.c.i
+
+unixProject/guswns/Mc3/display.s: unixProject/guswns/Mc3/display.c.s
+
+.PHONY : unixProject/guswns/Mc3/display.s
+
+# target to generate assembly for a file
+unixProject/guswns/Mc3/display.c.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/display.c.s
+.PHONY : unixProject/guswns/Mc3/display.c.s
+
+unixProject/guswns/Mc3/function.obj: unixProject/guswns/Mc3/function.c.obj
+
+.PHONY : unixProject/guswns/Mc3/function.obj
+
+# target to build an object file
+unixProject/guswns/Mc3/function.c.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/function.c.obj
+.PHONY : unixProject/guswns/Mc3/function.c.obj
+
+unixProject/guswns/Mc3/function.i: unixProject/guswns/Mc3/function.c.i
+
+.PHONY : unixProject/guswns/Mc3/function.i
+
+# target to preprocess a source file
+unixProject/guswns/Mc3/function.c.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/function.c.i
+.PHONY : unixProject/guswns/Mc3/function.c.i
+
+unixProject/guswns/Mc3/function.s: unixProject/guswns/Mc3/function.c.s
+
+.PHONY : unixProject/guswns/Mc3/function.s
+
+# target to generate assembly for a file
+unixProject/guswns/Mc3/function.c.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/function.c.s
+.PHONY : unixProject/guswns/Mc3/function.c.s
+
+unixProject/guswns/Mc3/mcdonald.obj: unixProject/guswns/Mc3/mcdonald.c.obj
+
+.PHONY : unixProject/guswns/Mc3/mcdonald.obj
+
+# target to build an object file
+unixProject/guswns/Mc3/mcdonald.c.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/mcdonald.c.obj
+.PHONY : unixProject/guswns/Mc3/mcdonald.c.obj
+
+unixProject/guswns/Mc3/mcdonald.i: unixProject/guswns/Mc3/mcdonald.c.i
+
+.PHONY : unixProject/guswns/Mc3/mcdonald.i
+
+# target to preprocess a source file
+unixProject/guswns/Mc3/mcdonald.c.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/mcdonald.c.i
+.PHONY : unixProject/guswns/Mc3/mcdonald.c.i
+
+unixProject/guswns/Mc3/mcdonald.s: unixProject/guswns/Mc3/mcdonald.c.s
+
+.PHONY : unixProject/guswns/Mc3/mcdonald.s
+
+# target to generate assembly for a file
+unixProject/guswns/Mc3/mcdonald.c.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/unixProject/guswns/Mc3/mcdonald.c.s
+.PHONY : unixProject/guswns/Mc3/mcdonald.c.s
+
 unixProject/guswns/time.obj: unixProject/guswns/time.c.obj
 
 .PHONY : unixProject/guswns/time.obj
@@ -278,6 +359,15 @@ help:
 	@echo ... unixProject/guswns/Mc/intro.obj
 	@echo ... unixProject/guswns/Mc/intro.i
 	@echo ... unixProject/guswns/Mc/intro.s
+	@echo ... unixProject/guswns/Mc3/display.obj
+	@echo ... unixProject/guswns/Mc3/display.i
+	@echo ... unixProject/guswns/Mc3/display.s
+	@echo ... unixProject/guswns/Mc3/function.obj
+	@echo ... unixProject/guswns/Mc3/function.i
+	@echo ... unixProject/guswns/Mc3/function.s
+	@echo ... unixProject/guswns/Mc3/mcdonald.obj
+	@echo ... unixProject/guswns/Mc3/mcdonald.i
+	@echo ... unixProject/guswns/Mc3/mcdonald.s
 	@echo ... unixProject/guswns/time.obj
 	@echo ... unixProject/guswns/time.i
 	@echo ... unixProject/guswns/time.s

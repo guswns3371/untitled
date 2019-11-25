@@ -14,7 +14,7 @@ struct product
 
 int count = 0;
 int ID;
-int back = 3;
+int back;
 int kind;
 char kinds[3][10] ={"버거","사이드","음료"};
 int convert(char num[]);
@@ -27,10 +27,10 @@ void displayBurgerMenu();
 void displayInput();
 int  displayAll();
 
-void Add();
-void Search();
+void Add2();
+void Search2();
 void Revise2();
-void Delete();
+void Delete2();
 
 
 void shoppingcar();
@@ -62,13 +62,13 @@ int main()
         switch (n){
             case 1:displayAll();
                 break;
-            case 2:Add();
+            case 2:Add2();
                 break;
             case 3:Revise2();
                 break;
-            case 4:Delete();
+            case 4:Delete2();
                 break;
-            case 5:Search();
+            case 5:Search2();
                 break;
             case 6:exit(0);
             default:break;
@@ -86,7 +86,7 @@ int main()
                 break;
             case 3://Service();
                 break;
-            case 4:Search();
+            case 4:Search2();
                 break;
             case 5://sort();
                 break;
@@ -215,10 +215,10 @@ int GetNextIdx(char *filename)
     }
     return j;
 }
-void Add()      //제품 정보 추가
+void Add2()      //제품 정보 추가
 {
-    FILE *fp ,*fpr;
-    int i = 0,j;
+    FILE *fp;
+    int i = 0;
     int loop = 1;     //루프가 설정되어 있는지 확인
     system("clear");
 
@@ -258,7 +258,8 @@ void Add()      //제품 정보 추가
 
 }
 
-void Revise2(){
+void Revise2()
+{
     system("clear");
     FILE *fp,*fp2;
     FILE *dfp,*dfp2;
@@ -382,8 +383,8 @@ void Revise2(){
     remove("information0.txt");
 
 }
-void Delete()            //제품 정보 삭제
-{
+void Delete2()            //제품 정보 삭제
+ {
     system("clear");
     FILE* fp;
     FILE* dfp;
@@ -446,7 +447,7 @@ void Delete()            //제품 정보 삭제
         printf("\n\n제품 삭제를 취소하였습니다\n");
 }
 
-void Search()              //제품 정보 쿼리
+void Search2()              //제품 정보 쿼리
 {
     system("clear");
     int way;
