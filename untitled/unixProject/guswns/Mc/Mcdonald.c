@@ -295,6 +295,7 @@ void Revise()        //제품 정보 편집
     displayAll();
     printf("편집하려는 제품의 번호을 입력하십시오:\n");
     scanf("%s", idx);
+    
     while (fread(&pros[i], sizeof(struct product), 1, fp))  //제품 정보를 순환
     {
         if (strcmp(idx, pros[i].idx) != 0)   //수정 될 제품 정보인지 확인
@@ -334,7 +335,7 @@ void Revise()        //제품 정보 편집
     scanf("%s",newpro.name);
     printf("새로운 제품의 가격 : ");
     scanf("%s",newpro.price);
-    sprintf(newpro.idx,"%d",GetNextIdx()); // 새제품의 idx
+    sprintf(newpro.idx,"%d",GetNextIdx()+1); // 새제품의 idx
 
     if ((fp = fopen("information.txt", "ab")) == NULL)
     {
