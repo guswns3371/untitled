@@ -2,10 +2,7 @@
 void mainmenu()
 {
 
-
-
-
-    //하현준
+    //하현준123
     system("clear");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------------\n");
