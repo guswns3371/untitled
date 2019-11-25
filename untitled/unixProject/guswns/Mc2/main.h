@@ -36,23 +36,4 @@ struct product
     char price[20];
 }pros[100];
 
-
-/*********************/
 int kind;
-int convert(char num[]);
-int GetCount(char *filename);
-
-void displayAdmin();
-void displayCustomer();
-void displayMainMenu();
-int  displayAll();
-
-void Add2();
-void Search2();
-void Revise2();
-void Delete2();
-
-
-void shoppingcar();
-void searchbyname2();
-void searchbykind2();

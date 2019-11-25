@@ -654,7 +654,7 @@ void account() // 장바구니 결제
 
 
 /******************************************/
-int GetNextIdx(char *filename)
+int GetCount(char *filename)
 {
     FILE *fpr;
     int j,i=0;
@@ -682,7 +682,7 @@ void Add2()      //제품 정보 추가
     do
     {
 
-        sprintf(pros[i].idx,"%d" ,GetNextIdx(INFO_FILE));//번호 지정
+        sprintf(pros[i].idx,"%d" ,GetCount(INFO_FILE));//번호 지정
         printf("추가하려는 제품의 종류 \n버거 0\n사이드 1\n음료 2: ");
         scanf("%d",&kind);
         strcpy(pros[i].kind,kinds[kind]);
@@ -791,7 +791,7 @@ void Revise2()
     scanf("%s",newpro.name);
     printf("새로운 제품의 가격 : ");
     scanf("%s",newpro.price);
-    sprintf(newpro.idx,"%d",GetNextIdx("delete.txt")); // 새제품의 idx
+    sprintf(newpro.idx,"%d",GetCount("delete.txt")); // 새제품의 idx
 
 
     if ((dfp = fopen("delete.txt", "rb")) == NULL)
