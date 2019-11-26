@@ -2,9 +2,10 @@
 
 int main(void)
 {
+
     int n;
     char password[20];
-    char *correctpassword = "1";
+    char correctpassword[] = "1";
     backtomain:
     mainmenu(); //메인 메뉴 표시
     if (ID == 0)

@@ -1,8 +1,10 @@
 #include "main.h"
+int ID;
+int back;
+struct product pros[100];
+int kind;
 void mainmenu()
 {
-
-    //하현준123
     system("clear");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------------\n");
@@ -57,7 +59,7 @@ void showmenu1()
 
 /*************/
 
-void displayMainMenu() {
+/*void displayMainMenu() {
     system("clear");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------\n");
@@ -66,7 +68,7 @@ void displayMainMenu() {
 
     printf("\tAdmin 메뉴 0\n \t손님 메뉴 1 :");
     scanf("%d", &ID);
-}
+}*/
 
 void displayCustomer()
 {

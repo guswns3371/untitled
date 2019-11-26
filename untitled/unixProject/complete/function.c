@@ -1,4 +1,4 @@
-d#include "main.h"
+#include "main.h"
 char kinds[3][10] ={"버거","사이드","음료"};
 int ShowAll()//모든 제품 표시
 {
@@ -304,7 +304,7 @@ void Buy()  //상품 구매
     system("clear");
     FILE *fp;
     FILE *newfp;
-    int idx[20];
+    char idx[20];
     int money; //지불 금액
     int change; //거스름돈
     int prices; // 제품 가격
@@ -341,7 +341,7 @@ void Buy()  //상품 구매
             scanf("%c",&answer);
             switch(answer)
             {
-                case y:
+                case 'y':
                     printf("지불할 금액:"); //지불 금액을 입력하세요.
                     scanf("%d", &money);
                     prices = atoi(pros[i].price); //문자열에서 정수로 가격 변환
@@ -366,7 +366,7 @@ void Buy()  //상품 구매
 
                     }
                     exit(0);
-                case n:
+                case 'n':
                     exit(0);
             }
          }

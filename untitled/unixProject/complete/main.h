@@ -24,21 +24,18 @@ void receipt();
 void sortbycategory();
 void sortbyprice();
 //소비자 함수
-
-int ID;
-int back;
-//전역변수
 struct product
 {
     char idx[20];
     char kind[20];
     char name[20];
     char price[20];
-}pros[100];
-
-
-
-int kind;
+};//구조체
+extern int ID;
+extern int back;
+extern struct product pros[100];
+extern int kind;
+//전역변수
 int convert(char num[]);
 int GetCount(char *filename);
 int GetLastIndex(char *filename);
