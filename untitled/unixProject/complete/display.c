@@ -5,7 +5,7 @@ struct product pros[100];
 int kind;
 void mainmenu()
 {
-    system("clear");
+    system("cls");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------------\n");
     printf("\t|     Welcome to McDonald (메인 메뉴)    |\n");
@@ -22,7 +22,7 @@ void mainmenu()
 // 메인 메뉴 표시
 void showmenu0()
 {
-    system("clear");
+    system("cls");
     printf("\n\n\n\n\n");
     printf("\t ------------------------------------------\n");
     printf("\t|     Welcome to McDonald (Admin 메뉴)     |\n");
@@ -41,13 +41,13 @@ void showmenu0()
 
 void showmenu1()
 {
-    system("clear");
+    system("cls");
     printf("\n\n\n\n\n");
     printf("\t -----------------------------------------\n");
     printf("\t|      Welcome to McDonald (손님 메뉴)    |\n");
     printf("\t|-----------------------------------------|\n");
-    printf("\t|\t1-제품 구매                       |\n");//Buy();
-    printf("\t|\t2-제품 정렬하기            |\n");//sort();
+    printf("\t|\t1-제품 목록 보기                  |\n");//Buy();
+    printf("\t|\t2-제품 구매                       |\n");//sort();
     printf("\t|\t3-장바구니에 상품 추가            |\n");//shoppingcart();
     printf("\t|\t4-계산하기                        |\n");//account();
     printf("\t|\t5-종료                            |\n");//exit(0);
@@ -59,8 +59,8 @@ void showmenu1()
 
 /*************/
 
-/*void displayMainMenu() {
-    system("clear");
+void displayMainMenu() {
+    system("cls");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------\n");
     printf("\t|      Welcome to McDonald (메인 메뉴)   |\n");
@@ -68,11 +68,11 @@ void showmenu1()
 
     printf("\tAdmin 메뉴 0\n \t손님 메뉴 1 :");
     scanf("%d", &ID);
-}*/
+}
 
 void displayCustomer()
 {
-    system("clear");
+    system("cls");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------------\n");
     printf("\t|      Welcome to McDonald (손님 메뉴)   |\n");
@@ -92,7 +92,7 @@ void displayCustomer()
 
 void displayAdmin()
 {
-    system("clear");
+    system("cls");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------\n");
     printf("\t|      Welcome to McDonald (Admin 메뉴)   |\n");
@@ -110,7 +110,7 @@ void displayAdmin()
 
 int displayAll()       //모든 제품 정보 표시
 {
-    system("clear");
+    system("cls");
     FILE *fp;
     int i;
 

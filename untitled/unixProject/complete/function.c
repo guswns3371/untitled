@@ -2,7 +2,7 @@
 char kinds[3][10] ={"버거","사이드","음료"};
 int ShowAll()//모든 제품 표시
 {
-    system("clear");
+    system("cls");
     FILE *fp;
     int i;
 
@@ -38,7 +38,7 @@ void Add() //제품 정보 추가
     FILE *fp;
     int i = 0;
     int loop = 1; //루프가 설정되어 있는지 확인
-    system("clear");
+    system("cls");
 
     do
     {
@@ -67,7 +67,7 @@ void Add() //제품 정보 추가
 
 void Revise() //제품 정보 편집
 {
-    system("clear");
+    system("cls");
     FILE *fp;
     FILE *dfp;
     int i = 0;
@@ -139,7 +139,7 @@ void Revise() //제품 정보 편집
 
 void Delete() //제품 정보 삭제
 {
-    system("clear");
+    system("cls");
     FILE* fp;
     FILE* dfp;
     int i = 0;
@@ -207,7 +207,7 @@ void Delete() //제품 정보 삭제
 
 void Search()
 {
-    system("clear");
+    system("cls");
     int way;
     int i = 0;
 
@@ -230,7 +230,7 @@ void Search()
 
 void searchbycategory()
 {
-    system("clear");
+    system("cls");
     int judge = 0;
     FILE* fp;
     int i = 0;
@@ -265,7 +265,7 @@ void searchbycategory()
 }
 void searchbyname()
 {
-    system("clear");
+    system("cls");
     int judge = 0;
     FILE* fp;
     int i = 0;
@@ -301,7 +301,7 @@ void searchbyname()
 
 void Buy()  //상품 구매
 {
-    system("clear");
+    system("cls");
     FILE *fp;
     FILE *newfp;
     char idx[20];
@@ -389,7 +389,7 @@ void Buy()  //상품 구매
 
 void sort()
 {
-    system("clear");
+    system("cls");
     int way;
     printf("\n\n정렬 방식을 선택하십시오:\n");
     printf("종류별(1),가격별(2)");
@@ -502,7 +502,7 @@ void sortbyprice()
 
 void receipt()
 {
-    system("clear");
+    system("cls");
     FILE *fp;
     int i, sum = 0, money;
 
@@ -518,7 +518,7 @@ void receipt()
 }
 void soldproducts()
 {
-    system("clear");
+    system("cls");
     FILE *fp;
     int i, sum = 0, money,number;
 
@@ -555,7 +555,7 @@ void shoppingcart()
     int n, i = 0, judge = 0,loop=1;
     n = ShowAll();
     char name[20];
-    system("clear");
+    system("cls");
     if ((sfp = fopen("shoppingcart.txt", "ab")) == NULL)
     {
         printf("can not open the file");
@@ -606,7 +606,7 @@ void account() // 장바구니 결제
 {
     FILE *sfp, *fp;
     int i, j, sum = 0, price, money, change,number=1;
-    system("clear");
+    system("cls");
     if ((sfp = fopen("shoppingcart.txt", "rb")) == NULL)
     {
         printf("can not open the file\n");
@@ -710,7 +710,7 @@ void Add2()      //제품 정보 추가
     FILE *fp;
     int i = 0;
     int loop = 1;     //루프가 설정되어 있는지 확인
-    system("clear");
+    system("cls");
 
     do
     {
@@ -750,7 +750,7 @@ void Add2()      //제품 정보 추가
 
 void Revise2()
 {
-    system("clear");
+    system("cls");
     FILE *fp,*fp2;
     FILE *dfp,*dfp2;
     int i=0;
@@ -876,7 +876,7 @@ void Revise2()
 }
 void Delete2()            //제품 정보 삭제
 {
-    system("clear");
+    system("cls");
     FILE* fp;
     FILE* dfp;
     int i = 0;
@@ -940,7 +940,7 @@ void Delete2()            //제품 정보 삭제
 
 void Search2()              //제품 정보 쿼리
 {
-    system("clear");
+    system("cls");
     int way;
 
     printf("원하는 방법을 선택하십시오：\n");
@@ -959,7 +959,7 @@ void Search2()              //제품 정보 쿼리
 void searchbyname2()
 {
     int judge = 0;
-    system("clear");
+    system("cls");
     FILE* fp;
     int i = 0;
     char name[10];
@@ -997,7 +997,7 @@ void searchbyname2()
 void searchbykind2()
 {
     int judge = 0;
-    system("clear");
+    system("cls");
     FILE* fp;
     int i = 0;
 

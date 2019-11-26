@@ -47,9 +47,9 @@ int main(void)
         showmenu1();
         scanf("%d", &n);
         switch (n){
-            case 1:Buy();
+            case 1:sort();
                 break;
-            case 2:sort();
+            case 2:Buy();
                 break;
             case 3:shoppingcart();
                 break;
