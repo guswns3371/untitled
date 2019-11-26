@@ -5,7 +5,7 @@
 
 void mainmenu();
 void showmenu0();
-void showmenu1();
+void CustomerMenu();
 int  ShowAll();
 //관리자,소비자 함수
 void Add();
@@ -31,7 +31,7 @@ struct product
     char name[20];
     char price[20];
 };//구조체
-extern int ID;
+extern char ID;
 extern int back;
 extern struct product pros[100];
 extern int kind;
@@ -50,7 +50,5 @@ void Search2();
 void Revise2();
 void Delete2();
 
-
-void shoppingcar();
 void searchbyname2();
 void searchbykind2();

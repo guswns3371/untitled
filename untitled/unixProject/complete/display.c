@@ -1,10 +1,11 @@
 #include "main.h"
-int ID;
+char ID;
 int back;
 struct product pros[100];
 int kind;
 void mainmenu()
 {
+    char id;
     system("cls");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------------\n");
@@ -16,11 +17,23 @@ void mainmenu()
     printf("\t|                                        |\n");
     printf("\t|                                        |\n");
     printf("\t ----------------------------------------\n");
-    printf("\tAdmin 메뉴 0\n \t손님 메뉴 1 :");
-    scanf("%d", &ID);
+    printf("\tAdmin 메뉴 1\n \t손님 메뉴 2 \n");
+   /* scanf("%c", &ID);
+    switch(ID)
+    {
+        case '1':
+            displayAdmin();
+            break;
+        case '2':
+            CustomerMenu();
+            break;
+        default:
+            mainmenu();
+            break;
+    }*/
 }
 // 메인 메뉴 표시
-void showmenu0()
+/*void showmenu0()
 {
     system("cls");
     printf("\n\n\n\n\n");
@@ -38,27 +51,57 @@ void showmenu0()
     printf("\n      ENTER YOUR CHOICE(1-7):");
 }
 //관리자 메뉴 표시
-
-void showmenu1()
+*/
+void CustomerMenu()
 {
+    char id;
+    int i=0;
+    FILE* file;
+    if((file=fopen("information.txt","rb"))==NULL)
+    {
+        printf("can not open file");
+        exit(0);
+    }
+    for(i=0;fread(&pros[i],sizeof(struct product),1,file)!=0;i++);
     system("cls");
     printf("\n\n\n\n\n");
-    printf("\t -----------------------------------------\n");
-    printf("\t|      Welcome to McDonald (손님 메뉴)    |\n");
-    printf("\t|-----------------------------------------|\n");
-    printf("\t|\t1-제품 목록 보기                  |\n");//Buy();
-    printf("\t|\t2-제품 구매                       |\n");//sort();
-    printf("\t|\t3-장바구니에 상품 추가            |\n");//shoppingcart();
-    printf("\t|\t4-계산하기                        |\n");//account();
-    printf("\t|\t5-종료                            |\n");//exit(0);
-    printf("\t -----------------------------------------\n");
-    printf("\n      ENTER YOUR CHOICE(1-5):");
+    printf("\t ------------------------------------------------------\n");
+    printf("\t|                  Welcome to McDonald                 |\n");
+    printf("\t ------------------------------------------------------\n");
+    printf("\t|                         메뉴                         |\n");
+    printf("\t|\t번호\t종류\t제품명\t\t     상품 가격 |\n");
+    printf("\t|------------------------------------------------------|\n");
+    for(int j=0;j<i;j++)
+    {
+        printf("\t|\t%s\t%s\t%s\t\t%s   |\n",(pros+j)->idx,(pros+j)->kind,(pros+j)->name,(pros+j)->price);
+    }
+    printf("\t|------------------------------------------------------|\n");
+    printf("\t|\t1-구매                                         |\n");//account();
+    printf("\t|\t2-장바구니                                     |\n");//shoppingcart();
+    printf("\t|\t3-뒤로가기                                     |\n");//exit(0);
+    printf("\t ------------------------------------------------------\n");
+    printf("\n      ENTER YOUR CHOICE(1-3):");
+    scanf("%c", &ID);
+    switch(ID)
+    {
+        case '1':
+            Buy();
+            break;
+        case '2':
+            shoppingcart();
+            break;
+        case '3':
+            mainmenu();
+            break;
+        default:
+            break;
+    }
 }
 //소비자 메뉴 표시
 
 
 /*************/
-
+/*
 void displayMainMenu() {
     system("cls");
     printf("\n\n\n\n\n");
@@ -68,8 +111,8 @@ void displayMainMenu() {
 
     printf("\tAdmin 메뉴 0\n \t손님 메뉴 1 :");
     scanf("%d", &ID);
-}
-
+}*/
+/*
 void displayCustomer()
 {
     system("cls");
@@ -89,21 +132,21 @@ void displayCustomer()
     printf("\n\t\t메뉴를 입력하세요 (1-6):");
 }
 //소비자 메뉴 표시
-
+*/
 void displayAdmin()
 {
     system("cls");
     printf("\n\n\n\n\n");
-    printf("\t ----------------------------------\n");
+    printf("\t -----------------------------------------\n");
     printf("\t|      Welcome to McDonald (Admin 메뉴)   |\n");
-    printf("\t|---------------------------------|\n");
-    printf("\t|\t1-전체 메뉴 보기        |\n");
-    printf("\t|\t2-메뉴 추가                |\n");
-    printf("\t|\t3-메뉴 수정           |\n");
-    printf("\t|\t4-메뉴 삭제				 |\n");
-    printf("\t|\t5-메뉴 검색           |\n");
-    printf("\t|\t6-종료                    |\n");
-    printf("\t ----------------------------------\n");
+    printf("\t|-----------------------------------------|\n");
+    printf("\t|\t1-전체 메뉴 보기                  |\n");
+    printf("\t|\t2-메뉴 추가                       |\n");
+    printf("\t|\t3-메뉴 수정                       |\n");
+    printf("\t|\t4-메뉴 삭제                       |\n");
+    printf("\t|\t5-메뉴 검색                       |\n");
+    printf("\t|\t6-종료                            |\n");
+    printf("\t -----------------------------------------\n");
     printf("\n\t\t메뉴를 입력하세요 (1-6):");
 }
 //공급 업체 메뉴 표시
@@ -121,10 +164,10 @@ int displayAll()       //모든 제품 정보 표시
     }
     //파일을 열 수 있는지 확인
     printf("\n\n\n\n\n");
-    printf("\t -----------------------------------------------\n");
-    printf("\t|   Welcome to McDonald                          |\n");
+    printf("\t ------------------------------------------------------\n");
+    printf("\t|                 Welcome to McDonald                  |\n");
     printf("\t|  번호   종류            제품명           상품 가격   |\n");
-    printf("\t|------------------------------------------------|\n");
+    printf("\t|------------------------------------------------------|\n");
     for (i = 0; (fread(&pros[i], sizeof(struct product), 1, fp)) != 0; i++)
     {
         printf("\t|%5s %8s%20s%20s   |\n", pros[i].idx,pros[i].kind, pros[i].name, pros[i].price);

@@ -176,6 +176,33 @@ function.c.s:
 	$(MAKE) -f CMakeFiles\complete.dir\build.make CMakeFiles/complete.dir/function.c.s
 .PHONY : function.c.s
 
+info.obj: info.c.obj
+
+.PHONY : info.obj
+
+# target to build an object file
+info.c.obj:
+	$(MAKE) -f CMakeFiles\complete.dir\build.make CMakeFiles/complete.dir/info.c.obj
+.PHONY : info.c.obj
+
+info.i: info.c.i
+
+.PHONY : info.i
+
+# target to preprocess a source file
+info.c.i:
+	$(MAKE) -f CMakeFiles\complete.dir\build.make CMakeFiles/complete.dir/info.c.i
+.PHONY : info.c.i
+
+info.s: info.c.s
+
+.PHONY : info.s
+
+# target to generate assembly for a file
+info.c.s:
+	$(MAKE) -f CMakeFiles\complete.dir\build.make CMakeFiles/complete.dir/info.c.s
+.PHONY : info.c.s
+
 mcdonald.obj: mcdonald.c.obj
 
 .PHONY : mcdonald.obj
@@ -218,6 +245,9 @@ help:
 	@echo ... function.obj
 	@echo ... function.i
 	@echo ... function.s
+	@echo ... info.obj
+	@echo ... info.i
+	@echo ... info.s
 	@echo ... mcdonald.obj
 	@echo ... mcdonald.i
 	@echo ... mcdonald.s

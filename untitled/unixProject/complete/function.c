@@ -301,20 +301,12 @@ void searchbyname()
 
 void Buy()  //상품 구매
 {
-    system("cls");
     FILE *fp;
     FILE *newfp;
     char idx[20];
-    int money; //지불 금액
-    int change; //거스름돈
-    int prices; // 제품 가격
-    int judge = 0;
-    int i;
+    char backpage[2]="b";
     char answer;
-
-    ShowAll();
-    printf("구매하려는 제품의 번호를 입력하십시오 :");
-    scanf("%s", idx);
+    int money,change,prices,judge=0,i; //지불 금액
     if ((fp = fopen("information.txt", "rb")) == NULL)
     {
         printf("can not open the file\n");
@@ -325,6 +317,13 @@ void Buy()  //상품 구매
         printf("can not open the file");
         exit(0);
     }
+    printf("구매하려는 제품의 번호를 입력하십시오 (이전 페이지:b)");
+    scanf("%s", idx);
+    if(strcmp(backpage,idx))
+    {
+        CustomerMenu();
+    }
+
     //파일 열 수 있는지 확인
     for (i = 0; judge != 1; i++)
     {
