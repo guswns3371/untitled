@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define INFO_FILE "information.txt"
-
+//dos창에선 utf-8로 설정해야 한글이 안깨짐 >chcp 65001
 void mainmenu();
 void showmenu0();
 void CustomerMenu();
@@ -31,6 +31,14 @@ struct product
     char name[20];
     char price[20];
 };//구조체
+struct shoppinglist
+{
+    char idx[20];
+    char kind[20];
+    char name[20];
+    char price[20];
+    int num;
+};
 extern char ID;
 extern int back;
 extern struct product pros[100];

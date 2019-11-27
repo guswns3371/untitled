@@ -5,7 +5,7 @@ struct product pros[100];
 int kind;
 void mainmenu()
 {
-    char id;
+   // char id;
     system("cls");
     printf("\n\n\n\n\n");
     printf("\t ----------------------------------------\n");
@@ -54,7 +54,7 @@ void mainmenu()
 */
 void CustomerMenu()
 {
-    char id;
+    //char id;
     int i=0;
     FILE* file;
     if((file=fopen("information.txt","rb"))==NULL)
@@ -81,7 +81,7 @@ void CustomerMenu()
     printf("\t|\t3-뒤로가기                                     |\n");//exit(0);
     printf("\t ------------------------------------------------------\n");
     printf("\n      ENTER YOUR CHOICE(1-3):");
-    scanf("%c", &ID);
+   /* scanf("%c", &ID);
     switch(ID)
     {
         case '1':
@@ -95,7 +95,7 @@ void CustomerMenu()
             break;
         default:
             break;
-    }
+    }*/
 }
 //소비자 메뉴 표시
 

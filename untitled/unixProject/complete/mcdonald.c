@@ -2,16 +2,16 @@
 
 int main(void)
 {
-    char id;
-    char n;
+    int id;
+    int n;
     char password[20];
     char correctpassword[] = "1";
     backtomain:
 
     mainmenu(); //메인 메뉴 표시
-    scanf("%c",&id);
+    scanf("%d",&id);
     switch(id) {
-        case '1':
+        case 1: {
             printf("제품 관리 권한을 얻으려면 비밀번호를 입력하십시오:\n");
             scanf("%s", password);
             //비밀번호 입력
@@ -22,7 +22,7 @@ int main(void)
             //올바른 비밀번호 결정
             displayAdmin();
             //관리자 모드
-            scanf("%c", &n);
+            scanf("%d", &n);
 
             switch (n) {
                 case 1:
@@ -46,36 +46,30 @@ int main(void)
                     break;
             }
             break;
+        }
         //관리자 모드 메뉴 표시
-        case '2':
-        backtomain1:
-        CustomerMenu();
-        scanf("%c", &n);
-        switch (n){
-            case 1:Buy();
-                break;
-            case 2:shoppingcart();
-                break;
-            case 3:
-                goto backtomain;
-                break;
-            default:
-                goto backtomain1;
-                break;
+        case 2: {
+            backtomain1:
+            CustomerMenu();
+            scanf("%d", &n);
+            switch (n) {
+                case 1:
+                    Buy();
+                    break;
+                case 2:
+                    shoppingcart();
+                    break;
+                case 3:
+                    goto backtomain;//뒤로가기 눌렀을 시 메인메뉴 선택으로 돌아감
+                    break;
+                default:
+                    goto backtomain1;//다른 키를 눌렀을 시 고객메뉴 선택으로 돌아감
+            }
         }//소비자 메뉴 모드
         break;
         default:
             goto backtomain;
     }
     printf("\n\n\n");
-    /*printf("\t메인 메뉴로 돌아가기 0\n\tAdmin 메뉴로 돌아가기 1\n\t손님 메뉴로 돌아가기 2\n\t:");
-    scanf("%d", &back);
-    if (back == 0)
-        goto backtomain;
-    else if (back == 1)
-        goto backtomenu0;
-    else if (back == 2)
-        goto backtomenu1;
-*/
     return 0;
 }

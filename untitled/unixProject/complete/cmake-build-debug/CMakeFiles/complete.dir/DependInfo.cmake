@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/display.c" "C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/cmake-build-debug/CMakeFiles/complete.dir/display.c.obj"
   "C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/function.c" "C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/cmake-build-debug/CMakeFiles/complete.dir/function.c.obj"
-  "C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/info.c" "C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/cmake-build-debug/CMakeFiles/complete.dir/info.c.obj"
   "C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/mcdonald.c" "C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/cmake-build-debug/CMakeFiles/complete.dir/mcdonald.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
