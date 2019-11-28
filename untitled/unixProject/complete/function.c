@@ -1,6 +1,6 @@
 #include "main.h"
 char kinds[3][10] ={"버거","사이드","음료"};
-int ShowAll()//모든 제품 표시
+/*int ShowAll()//모든 제품 표시
 {
     system("cls");
     FILE *fp;
@@ -32,8 +32,8 @@ int ShowAll()//모든 제품 표시
     }
     return i;
     //파일을 닫을 수 있는지 확인
-}
-void Add() //제품 정보 추가
+}*/
+/*void Add() //제품 정보 추가
 {
     FILE *fp;
     int i = 0;
@@ -63,9 +63,9 @@ void Add() //제품 정보 추가
         printf("다른 제품 추가1, 메뉴로 돌아가기0");
         scanf("%d", &loop);
     } while (loop);
-}
+}*/
 
-void Revise() //제품 정보 편집
+/*void Revise() //제품 정보 편집
 {
     system("cls");
     FILE *fp;
@@ -136,22 +136,15 @@ void Revise() //제품 정보 편집
         exit(0);
     }
 }
-
-void Delete() //제품 정보 삭제
+*/
+void Delete() //장바구니 목록 삭제
 {
-    system("cls");
     FILE* fp;
     FILE* dfp;
     int i = 0;
     char name[10];
     int judge = 0;
     int confirm;
-
-    if ((fp = fopen("information.txt", "rb+")) == NULL)
-    {
-        printf("can not open the file\n");
-        exit(0);
-    }
     if ((dfp = fopen("delete.txt", "ab")) == NULL)
     {
         printf("can not open the file\n");
@@ -159,7 +152,7 @@ void Delete() //제품 정보 삭제
     }
     //파일을 열 수 있는지 확인
 
-    ShowAll(); //제품 목록 표시
+  //  ShowAll(); //제품 목록 표시
     printf("삭제하려는 제품의 이름을 입력하세요:");
     scanf("%s", name);
     printf("제품을 제거하겠습니까?\n");
@@ -608,17 +601,18 @@ void shoppingcart()
     }
     //파일을 닫을 수 있는지 확인
     fflush(stdin);
-        printf("확인(Enter), 제품추가(space), 취소(ESC) ");
+    printf("확인(Enter), 제품추가(Spacebar+Enter), 취소(Tab+Enter) ");
         loop=getchar();
         switch(loop)
         {
             case 10:
                 printf("확인을 입력하셨습니다.\n");
                 break;
-            case :
+            case 32:
                 goto backtoshopping;
-            case :
+            case 9:
                 printf("취소를 입력하셨습니다.\n");
+
                 break;
             default:
                 break;

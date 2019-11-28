@@ -81,21 +81,6 @@ void CustomerMenu()
     printf("\t|\t3-뒤로가기                                     |\n");//exit(0);
     printf("\t ------------------------------------------------------\n");
     printf("\n      ENTER YOUR CHOICE(1-3):");
-   /* scanf("%c", &ID);
-    switch(ID)
-    {
-        case '1':
-            Buy();
-            break;
-        case '2':
-            shoppingcart();
-            break;
-        case '3':
-            mainmenu();
-            break;
-        default:
-            break;
-    }*/
 }
 //소비자 메뉴 표시
 
