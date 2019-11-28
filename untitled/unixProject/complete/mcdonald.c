@@ -66,10 +66,10 @@ int main(void)
                     goto backtomain1;//다른 키를 눌렀을 시 고객메뉴 선택으로 돌아감
             }
         }//소비자 메뉴 모드
+        goto backtomain1;
         break;
         default:
             goto backtomain;
     }
-    goto backtomain1;
-    return 0;
+    goto backtomain;
 }

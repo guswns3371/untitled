@@ -5,7 +5,7 @@
       <paths name="54.180.147.235">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/../../../.." web="/" />
+            <mapping deploy="/home/ubuntu/unixProject/complete" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

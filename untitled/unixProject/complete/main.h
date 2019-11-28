@@ -39,9 +39,10 @@ struct shoppinglist
     char price[20];
     int num;
 };
-#define Enter 1
-#define ESC 3
-#define Space 2
+Enter
+#define Enter 10
+#define Tab 9
+#define Space 32
 extern char ID;
 extern int back;
 extern struct product pros[100];

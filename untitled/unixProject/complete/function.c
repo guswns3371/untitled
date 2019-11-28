@@ -605,12 +605,12 @@ void shoppingcart()
         loop=getchar();
         switch(loop)
         {
-            case 10:
+            case Enter:
                 printf("확인을 입력하셨습니다.\n");
                 break;
-            case 32:
+            case spacebar:
                 goto backtoshopping;
-            case 9:
+            case tab:
                 printf("취소를 입력하셨습니다.\n");
 
                 break;
