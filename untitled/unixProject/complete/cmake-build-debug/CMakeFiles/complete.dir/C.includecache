@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/display.c
+main.h
+C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/main.h
+
+C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/function.c
+main.h
+C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/main.h
+
+C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/main.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/mcdonald.c
+main.h
+C:/Users/hong/Downloads/untitled-master/untitled/unixProject/complete/main.h
+
