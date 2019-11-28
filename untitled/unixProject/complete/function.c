@@ -574,17 +574,18 @@ void shoppingcart()
             {
                 memcpy(&list,&pros[i],sizeof(struct product));
                 judge=1;
-                printf("%s",list.idx);
-                goto shoppingcartout;
+                break;
             }
             i++;
         }
-    shoppingcartout:
         if(judge==0)
         {
-            printf("wrong number!!\n");
-           // getchar();
-            return;
+            char ch;
+            fflush(stdin);
+            do{
+                printf("wrong number\n Enter를 누르세요");
+            }while((ch=getchar())!=10);
+           return;
         }
     printf("갯수 ");
     scanf("%d",&num);
@@ -606,17 +607,17 @@ void shoppingcart()
         exit(0);
     }
     //파일을 닫을 수 있는지 확인
-        getchar();
+    fflush(stdin);
         printf("확인(Enter), 제품추가(space), 취소(ESC) ");
         loop=getchar();
         switch(loop)
         {
-            case '1':
+            case 10:
                 printf("확인을 입력하셨습니다.\n");
                 break;
-            case '2':
+            case :
                 goto backtoshopping;
-            case '3':
+            case :
                 printf("취소를 입력하셨습니다.\n");
                 break;
             default:
