@@ -551,42 +551,50 @@ void soldproducts()
 void shoppingcart()
 {
     FILE *sfp, *fp;
-    int n, i = 0, judge = 0,loop,num;
+    int n, i = 0,num=0,judge=0;
+    int loop;
     struct shoppinglist list;
     char index[20];
-    if ((sfp = fopen("shoppinglist.txt", "wb")) == NULL)
+    backtoshopping:
+    if ((sfp = fopen("shoppinglist.txt", "ab")) == NULL)
     {
         printf("can not open the file");
         exit(0);
     }
-    if ((fp = fopen("information.txt", "ab")) == NULL)
+    if ((fp = fopen("information.txt", "rb")) == NULL)
     {
         printf("can not open the file\n");
         exit(0);
     }//파일 열 수 있는지 확인
-    while (fread(&pros, sizeof(struct product), 1, fp) != 1)
-    {
-        i++;
-    }//제품 정보 저장
-
         printf("\n\n 장바구니에 추가 할 제품의 번호를 입력  ");
         scanf("%s",index);
-        printf("갯수 ");
-        scanf("%d",&num);
-        for (i = 0; judge != 1; i++)
+        while(fread(&pros[i],sizeof(struct product),1,fp) ==1)
         {
-            if (strcmp(index, pros[i].idx) == 0)
+            if(strcmp(pros[i].idx,index)==0)
             {
-                judge = 1;
                 memcpy(&list,&pros[i],sizeof(struct product));
-                list.num=num;
-                printf("%s번 %s %s %s %d개\n",list.idx,list.kind,list.name,list.price,list.num);
-                fwrite(&pros[i], sizeof(struct shoppinglist), 1, sfp);
+                judge=1;
+                printf("%s",list.idx);
+                goto shoppingcartout;
             }
-            else
-                continue;
+            i++;
         }
-        //제품을 찾아 장바구니에 담습니다.
+    shoppingcartout:
+        if(judge==0)
+        {
+            printf("wrong number!!\n");
+           // getchar();
+            return;
+        }
+    printf("갯수 ");
+    scanf("%d",&num);
+    list.num=num;
+    if(fwrite(&list, sizeof(struct shoppinglist), 1, sfp)!=1)
+    {
+        printf("오류");
+    }
+    //제품을 찾아 장바구니에 담습니다.
+    printf("%s번 %s %s %s %d개\n",list.idx,list.kind,list.name,list.price,list.num);
     if (fclose(fp))
     {
         printf("can not close the file\n");
@@ -598,16 +606,23 @@ void shoppingcart()
         exit(0);
     }
     //파일을 닫을 수 있는지 확인
-        printf("확인(Enter), 제품추가(1), 취소(ESC) ");
-        scanf("%d", &loop);
+        getchar();
+        printf("확인(Enter), 제품추가(space), 취소(ESC) ");
+        loop=getchar();
         switch(loop)
         {
-            case 13:
-            case 1:
-            case 27:
+            case '1':
+                printf("확인을 입력하셨습니다.\n");
+                break;
+            case '2':
+                goto backtoshopping;
+            case '3':
+                printf("취소를 입력하셨습니다.\n");
+                break;
             default:
+                break;
         }
-
+    return;
 }
 void account() // 장바구니 결제
 {

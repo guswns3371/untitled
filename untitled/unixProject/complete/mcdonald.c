@@ -70,6 +70,6 @@ int main(void)
         default:
             goto backtomain;
     }
-    printf("\n\n\n");
+    goto backtomain1;
     return 0;
 }
