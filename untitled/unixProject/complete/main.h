@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+//#include <sys/types.h>
+//#include<unistd.h>
+#include <process.h>
 #define INFO_FILE "information.txt"
 //dos창에선 utf-8로 설정해야 한글이 안깨짐 >chcp 65001
 void mainmenu();
 void showmenu0();
 void CustomerMenu();
 int  ShowAll();
+char* getFilename(char *file);
 //관리자,소비자 함수
 void Add();
 void Revise();
@@ -23,6 +27,7 @@ void account();
 void receipt();
 void sortbycategory();
 void sortbyprice();
+void viewshoppinglist();
 //소비자 함수
 struct product
 {
@@ -39,10 +44,10 @@ struct shoppinglist
     char price[20];
     int num;
 };
-Enter
 #define Enter 10
 #define Tab 9
 #define Space 32
+extern char address[30];
 extern char ID;
 extern int back;
 extern struct product pros[100];
@@ -64,3 +69,4 @@ void Delete2();
 
 void searchbyname2();
 void searchbykind2();
+//관리자 함수

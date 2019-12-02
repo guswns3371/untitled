@@ -1,5 +1,6 @@
 #include "main.h"
 char kinds[3][10] ={"버거","사이드","음료"};
+char address[30];
 /*int ShowAll()//모든 제품 표시
 {
     system("cls");
@@ -549,7 +550,7 @@ void shoppingcart()
     struct shoppinglist list;
     char index[20];
     backtoshopping:
-    if ((sfp = fopen("shoppinglist.txt", "ab")) == NULL)
+    if ((sfp = fopen(getFilename("shoppinglist.txt"), "ab")) == NULL)
     {
         printf("can not open the file");
         exit(0);
@@ -574,7 +575,8 @@ void shoppingcart()
         if(judge==0)
         {
             char ch;
-            fflush(stdin);
+            //fflush(stdin);리눅스에선 작동안됨
+            getchar();
             do{
                 printf("wrong number\n Enter를 누르세요");
             }while((ch=getchar())!=10);
@@ -608,17 +610,25 @@ void shoppingcart()
             case Enter:
                 printf("확인을 입력하셨습니다.\n");
                 break;
-            case spacebar:
+            case Space:
                 goto backtoshopping;
-            case tab:
+            case Tab:
                 printf("취소를 입력하셨습니다.\n");
-
                 break;
             default:
                 break;
         }
     return;
 }
+char* getFilename(char *file)
+{
+    pid_t pid = getpid();
+    sprintf(address,"%d",pid);
+    strcat(address,file);
+
+    return address;
+}
+
 void account() // 장바구니 결제
 {
     FILE *sfp, *fp;
@@ -1049,4 +1059,8 @@ void searchbykind2()
         printf("can not close the file\n");
         exit(0);
     }
+}
+void viewshoppinglist()
+{
+
 }

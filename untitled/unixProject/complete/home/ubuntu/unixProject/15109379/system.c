@@ -4,6 +4,6 @@ int main(void)
 { 
 	system("ls");
 	sleep(2);
-	system("clear");
+	system("cls");
 	system("ps -f");
 }
