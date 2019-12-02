@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <sys/types.h>
-//#include<unistd.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/types.h>
+//#include <sys/ipc.h>
+//#include <sys/msg.h>
 #include <process.h>
+#include <direct.h>
+#define DEFINED_KEY 0x10101010
 #define INFO_FILE "information.txt"
 //dos창에선 utf-8로 설정해야 한글이 안깨짐 >chcp 65001
 void mainmenu();
@@ -28,6 +33,8 @@ void receipt();
 void sortbycategory();
 void sortbyprice();
 void viewshoppinglist();
+
+//void sendMsgToAdmin();
 //소비자 함수
 struct product
 {
@@ -44,6 +51,10 @@ struct shoppinglist
     char price[20];
     int num;
 };
+struct {
+    long mtype;
+    char content[256];
+} msg;
 #define Enter 10
 #define Tab 9
 #define Space 32
@@ -51,6 +62,7 @@ extern char address[30];
 extern char ID;
 extern int back;
 extern struct product pros[100];
+extern struct shoppinglist list[100];
 extern int kind;
 //전역변수
 int convert(char num[]);
@@ -69,4 +81,6 @@ void Delete2();
 
 void searchbyname2();
 void searchbykind2();
+
+//void getMsgFromCustomer();
 //관리자 함수

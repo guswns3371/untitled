@@ -78,9 +78,11 @@ void CustomerMenu()
     printf("\t|------------------------------------------------------|\n");
     printf("\t|\t1-구매                                         |\n");//account();
     printf("\t|\t2-장바구니                                     |\n");//shoppingcart();
-    printf("\t|\t3-뒤로가기                                     |\n");//exit(0);
+    printf("\t|\t3-관리자에게 요청하기                                     |\n");//exit(0);
+    printf("\t|\t4-쇼핑 리스트 보기                                     |\n");//exit(0);
+    printf("\t|\t5-뒤로가기                                     |\n");//exit(0);
     printf("\t ------------------------------------------------------\n");
-    printf("\n      ENTER YOUR CHOICE(1-3):");
+    printf("\n      ENTER YOUR CHOICE(1-5):");
 }
 //소비자 메뉴 표시
 
@@ -130,9 +132,10 @@ void displayAdmin()
     printf("\t|\t3-메뉴 수정                       |\n");
     printf("\t|\t4-메뉴 삭제                       |\n");
     printf("\t|\t5-메뉴 검색                       |\n");
-    printf("\t|\t6-종료                            |\n");
+    printf("\t|\t6-고객의 목소리                            |\n");
+    printf("\t|\t7-종료                            |\n");
     printf("\t -----------------------------------------\n");
-    printf("\n\t\t메뉴를 입력하세요 (1-6):");
+    printf("\n\t\t메뉴를 입력하세요 (1-7):");
 }
 //공급 업체 메뉴 표시
 

@@ -41,6 +41,8 @@ int main(void)
                     Search2();
                     break;
                 case 6:
+                   // getMsgFromCustomer();
+                case 7:
                     exit(0);
                 default:
                     break;
@@ -60,10 +62,14 @@ int main(void)
                     shoppingcart();
                     break;
                 case 3:
-                    goto backtomain;//뒤로가기 눌렀을 시 메인메뉴 선택으로 돌아감
+                   // sendMsgToAdmin();
                     break;
                 case 4:
                     viewshoppinglist();
+                    break;
+                case 5:
+                    goto backtomain;//뒤로가기 눌렀을 시 메인메뉴 선택으로 돌아감
+                    break;
                 default:
                     goto backtomain1;//다른 키를 눌렀을 시 고객메뉴 선택으로 돌아감
             }

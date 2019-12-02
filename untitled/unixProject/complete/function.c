@@ -1,6 +1,7 @@
 #include "main.h"
 char kinds[3][10] ={"버거","사이드","음료"};
 char address[30];
+struct shoppinglist list[100];
 /*int ShowAll()//모든 제품 표시
 {
     system("cls");
@@ -143,9 +144,13 @@ void Delete() //장바구니 목록 삭제
     FILE* fp;
     FILE* dfp;
     int i = 0;
-    char name[10];
     int judge = 0;
     int confirm;
+    if ((fp = fopen(address, "rb")) == NULL)
+    {
+        printf("can not open the file\n");
+        exit(0);
+    }
     if ((dfp = fopen("delete.txt", "ab")) == NULL)
     {
         printf("can not open the file\n");
@@ -153,43 +158,22 @@ void Delete() //장바구니 목록 삭제
     }
     //파일을 열 수 있는지 확인
 
-  //  ShowAll(); //제품 목록 표시
-    printf("삭제하려는 제품의 이름을 입력하세요:");
-    scanf("%s", name);
+    //  ShowAll(); //제품 목록 표시
     printf("제품을 제거하겠습니까?\n");
     printf("Y/N(1/0)\n");
     scanf("%d", &confirm);
     if (confirm == 1)
     {
-        while (fread(&pros[i], sizeof(struct product), 1, fp) != 1) //제품 정보를 검사
+        int i=0;
+       for(i=0;fread(&list[i],sizeof(struct shoppinglist),1,fp)==1;i++);
+
+        for(int j=0;j<i-1;j++)
         {
-            if (strcmp(name, pros[i].name) != 0)
-            {
-                fwrite(&pros[i], sizeof(struct product), 1, dfp);
-                i++;
-                //새 파일로 삭제할 필요가 없는 제품 정보를 옮김
-            }
-            else
-            {
-                rewind(fp); //파일 포인터를 초기화
-                fseek(fp, sizeof(struct product)*(i + 1), 0);
-                //삭제할 제품의 다음 위치에 파일 포인터를 놓습니다.
-            }
+            fwrite(&list[i],sizeof(struct shoppinglist),1,dfp);
         }
-        if (fclose(fp))
-        {
-            printf("can not close the file\n");
-            exit(0);
-        }
-        if (fclose(fp))
-        {
-            printf("can not close the file\n");
-            exit(0);
-        }
-        //파일을 닫을 수 있는지 확인
-        remove("information.txt");
+        remove(getFilename("shoppinglist.txt"));
         //원본 파일 삭제
-        rename("delete.txt", "information.txt");
+        rename("delete.txt", getFilename("shoppinglist.txt"));
         //새로 만든 파일의 이름을 원래 파일 이름으로 변경
         printf("성공적으로 삭제되었습니다\n");
     }
@@ -197,8 +181,19 @@ void Delete() //장바구니 목록 삭제
     {
         printf("\n\n삭제 취소\n\n");
     }
+    //file descriptor close
+    if (fclose(fp))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+    if (fclose(dfp))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
+    //파일을 닫을 수 있는지 확인
 }
-
 /*void Search()
 {
     system("cls");
@@ -550,6 +545,7 @@ void shoppingcart()
     struct shoppinglist list;
     char index[20];
     backtoshopping:
+    printf("%s", getFilename("shoppinglist.txt"));
     if ((sfp = fopen(getFilename("shoppinglist.txt"), "ab")) == NULL)
     {
         printf("can not open the file");
@@ -602,7 +598,7 @@ void shoppingcart()
         exit(0);
     }
     //파일을 닫을 수 있는지 확인
-    fflush(stdin);
+   getchar();
     printf("확인(Enter), 제품추가(Spacebar+Enter), 취소(Tab+Enter) ");
         loop=getchar();
         switch(loop)
@@ -614,6 +610,7 @@ void shoppingcart()
                 goto backtoshopping;
             case Tab:
                 printf("취소를 입력하셨습니다.\n");
+                Delete();
                 break;
             default:
                 break;
@@ -622,10 +619,11 @@ void shoppingcart()
 }
 char* getFilename(char *file)
 {
-    pid_t pid = getpid();
-    sprintf(address,"%d",pid);
-    strcat(address,file);
 
+   // int file_len = strlen(file);
+  //  char * ch =(char*) malloc(file_len+ sizeof(int)*6);
+
+    sprintf(address,"%d_%s",getpid(),file);
     return address;
 }
 
@@ -1062,5 +1060,66 @@ void searchbykind2()
 }
 void viewshoppinglist()
 {
+    int i=0;
+    FILE *fp;
+    if((fp=fopen(getFilename("shoppinglist.txt"),"rb"))==NULL)
+    {
+        printf("can not open file\n");
+        exit(0);
+    }
+    for(i=0;fread(&list[i],sizeof(struct shoppinglist),1,fp)!=0;i++);
+    for(int j=0;j<i;j++)
+    {
+        printf("\t|\t%s\t%s\t%s\t%s\t%d   |\n",(list+j)->idx,(list+j)->kind,(list+j)->name,(list+j)->price,(list+j)->num);
+    }
+    system("pause");
+    if (fclose(fp))
+    {
+        printf("can not close the file\n");
+        exit(0);
+    }
 
+}
+void getMsgFromCustomer(){
+    int msg_qid;
+    int n=0;
+
+    fprintf(stdout, "--------고객의 목소리입니다--------\n");
+    if ((msg_qid = msgget(DEFINED_KEY, IPC_CREAT | 0666)) < 0) {
+        perror("msgget: ");
+        exit(-1);
+    }
+    while (1) {
+        memset(msg.pid, 0x0, 300);
+        if (msgrcv(msg_qid, &msg, 300, 0, IPC_NOWAIT) < 0) {
+            // perror("알림 : ");
+            return;
+        }
+
+        if(n==0) puts(msg.pid);
+        puts(msg.content);
+        n=1;
+    }
+
+}
+void sendMsgToAdmin(){
+    int msg_qid;
+    char content[300];
+    fprintf(stdout, "-------원하는 요구사항을 적어주세요 ('!종료' 를 입력하면 보내기를 완료합니다)------\n");
+    if ((msg_qid = msgget(DEFINED_KEY, IPC_CREAT | 0666)) < 0) {
+        perror("msgget: ");
+        exit(-1);
+    }
+    msg.mtype = 1;
+    sprintf(msg.pid,"%d 손님: ",getpid());
+    while (1) {
+        memset(msg.content, 0x0, 300);
+        gets(msg.content);
+        if (strcmp(msg.content,"!종료")==0)
+            return;
+        if (msgsnd(msg_qid, &msg, sizeof(msg.content), 0) < 0) {
+            perror("msgsnd: ");
+            return;
+        }
+    }
 }
